@@ -29,4 +29,7 @@ file { '//home/ec2-user/sara/sara-link.txt':
   ensure => link,
   target => '/opt/file4.txt'
 }
-
+exec {'/bin/cat':
+  logoutput => 'true',
+  command => '/bin/cat /home/ec2-user/sara/sara-link.txt'
+}
